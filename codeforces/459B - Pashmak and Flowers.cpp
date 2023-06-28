@@ -17,7 +17,7 @@ int main()
             minima = b[i];
     }
 
-    int maxCount(0), minCount(0);
+    unsigned long long maxCount(0), minCount(0);
     for (int i = 0; i < n; i++)
     {
         if (b[i] == maxima)
@@ -26,7 +26,9 @@ int main()
             minCount++;
     }
 
-    cout << maxima - minima << " " << minCount * maxCount << endl;
+    cout << maxima - minima << " ";
+    maxima == minima ? cout << maxCount * minCount / 4 : cout << minCount * maxCount;
+    cout << endl;
 
     return 0;
 }

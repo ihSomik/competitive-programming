@@ -9,7 +9,7 @@ int main()
     {
         int n;
         cin >> n;
-        if (!((n / 2) & 1)) // (n % 4 == 0)
+        if (!(n % 4))
             cout << "YES" << endl;
         else
             cout << "NO" << endl;

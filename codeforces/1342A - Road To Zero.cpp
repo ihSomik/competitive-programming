@@ -8,13 +8,13 @@ int main()
 
     while (t--)
     {
-        int x, y, a, b;
+        long long x, y, a, b;
         cin >> x >> y >> a >> b;
 
         if (x > y)
             swap(x, y);
 
-        long long firstWay = (y - x) * a + x * b;
+        long long firstWay = ((y - x) * a) + (x * b);
         long long secondWay = (x + y) * a;
 
         cout << min(firstWay, secondWay) << endl;
