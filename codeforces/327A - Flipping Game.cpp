@@ -1,4 +1,3 @@
-// flipping game
 #include <bits/stdc++.h>
 #define fastread() (ios_base::sync_with_stdio(false), cin.tie(NULL))
 #define endl '\n'
@@ -10,27 +9,27 @@ int main()
 {
     fastread();
 
-    int n,
-    a, count1(0), extra0(0), extra0max(-1);
+    int n;
     cin >> n;
-    while (n--)
+    int countOne(0), sum(0), maxSum = INT_MIN;
+    for (int i = 0; i < n; i++)
     {
+        int a;
         cin >> a;
-        if (a == 1)
+
+        if (a)
         {
-            count1++;
-            if (extra0 > 0)
-                extra0--;
+            countOne++;
+            sum--;
+            if (sum < 0)
+                sum = 0;
         }
         else
-        {
-            extra0++;
-            ;
-            if (extra0 > extra0max)
-                extra0max = extra0;
-        }
+            sum++;
+
+        maxSum = max(sum, maxSum);
     }
-    cout << count1 + extra0max << endl;
+    (countOne == n) ? cout << countOne - 1 : cout << countOne + maxSum;
 
     return 0;
 }
