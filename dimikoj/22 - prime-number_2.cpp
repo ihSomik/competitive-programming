@@ -1,9 +1,8 @@
+// https://dimikoj.com/problems/22/prime-number
 #include <bits/stdc++.h>
 using namespace std;
 
-
-bool check_prime(int n)
-{
+bool check_prime(int n) {
     if (n <= 1)
         return false;
     if (n <= 3)
@@ -16,12 +15,10 @@ bool check_prime(int n)
     return true;
 }
 
-int main()
-{
+int main() {
     int t;
     cin >> t;
-    while (t--)
-    {
+    while (t--) {
         int a, b;
         cin >> a >> b;
 
