@@ -1,33 +1,30 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
+#define fastread() (ios_base::sync_with_stdio(false), cin.tie(NULL))
+#define endl '\n'
+typedef long long ll;
 
-int main()
-{
-    int n;
-    cin>>n;
-    int x[n];
-    for(int i=0; i<n; i++)
-        cin>>x[i];
+void solve() {
+  int n;
+  cin >> n;
+  vector<int> x(n);
+  for (int i = 0; i < n; i++) cin >> x[i];
 
-    int q;
-    cin>>q;
-    int m[q];
-    int count;
+  sort(x.begin(), x.end());
 
-    for(int i=0; i<q; i++)
-    {
-        cin>>m[i];
+  int q;
+  cin >> q;
+  while (q--) {
+    int m;
+    cin >> m;
+    cout << upper_bound(x.begin(), x.end(), m) - x.begin() << endl;
+  }
+}
 
-        count=0;
-
-        for(int j=0; j<n; j++)
-        {
-            if(m[i]>=x[j])
-                count++;
-        }
-
-        cout<<count<<endl;
-    }
-
-    return 0;
+int main() {
+  fastread();
+  int t = 1;
+  // cin >> t;
+  while (t--) solve();
+  return 0;
 }
